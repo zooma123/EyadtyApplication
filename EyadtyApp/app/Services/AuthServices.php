@@ -10,6 +10,10 @@ use Illuminate\Support\Facades\Hash;
 
 class AuthServices
 {
+   
+    protected string $role = 'owner'; 
+
+   
     /**
      * Create a new class instance.
      */
@@ -21,7 +25,7 @@ class AuthServices
     public function register(array $data)
     {
         $data['password'] = Hash::make($data['password']);
-        $data['role'] = 'owner';
+        $data['role'] = $this->role;
         $user = User::create($data);
         $user->assignRole($data['role']);
 
