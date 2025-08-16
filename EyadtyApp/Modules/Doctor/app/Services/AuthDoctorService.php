@@ -19,6 +19,12 @@ class AuthDoctorService extends AuthServices
         // Call the parent register method which will use the 'doctor' role
         return $this->register($data);
     }
+
+
+
+
+
+
 }
 
 

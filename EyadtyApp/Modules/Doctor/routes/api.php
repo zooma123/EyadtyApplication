@@ -11,3 +11,4 @@ Route::middleware(['auth:sanctum'])->prefix('v1')->group(function () {
 
 Route::post('/Doctor/Register',[AuthDController::class,'register'])->name('DoctorRegister');
 
+Route::post('/Doctor/Login',[AuthDController::class,'login'])->name('DoctorLogin');
