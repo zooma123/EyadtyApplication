@@ -36,6 +36,13 @@ class DoctorServiceProvider extends ServiceProvider
     {
         $this->app->register(EventServiceProvider::class);
         $this->app->register(RouteServiceProvider::class);
+    
+        $this->app->bind(
+            \Modules\Doctor\Services\AuthDoctorService::class,
+            function ($app) {
+                return new \Modules\Doctor\Services\AuthDoctorService();
+            }
+        );
     }
 
     /**
